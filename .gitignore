@@ -1,0 +1,43 @@
+# OS / editor noise
+.DS_Store
+.idea/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.so
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Local papers / notes
+reva_paper.pdf
+
+# Local test assets and generated artifacts
+my_test_images/
+weights/
+
+# Generated evaluation outputs and bundled eval assets
+eval_results/*
+
+# Large model/checkpoint artifacts
+*.pt
+*.pth
+*.bin
+*.safetensors
+

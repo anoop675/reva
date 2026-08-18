@@ -1,0 +1,65 @@
+# ReVA / MScProject — single environment file
+#
+# 1) Install PyTorch with conda:
+#      conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+# 2) Then:
+#      pip install -r requirements.txt
+#
+# On Linux x86_64 GPU for faiss decontamination notebooks, prefer after install:
+#      pip install faiss-gpu-cu12
+#      (and comment out faiss-cpu below if both conflict)
+
+# --- Core numerics ---
+numpy==1.26.4
+scipy==1.13.1
+
+# --- Hugging Face / training ---
+transformers==4.45.0
+accelerate>=0.33.0,<1.0
+peft==0.19.1
+datasets>=2.19.0,<4.0
+huggingface-hub==0.25.2
+tokenizers>=0.19.0,<0.21
+safetensors>=0.4.0
+
+# --- Qwen / LoRA ---
+sentencepiece>=0.2.0
+protobuf>=3.20.0,<6.0
+# bitsandbytes>=0.43.0
+
+# --- Vision / IO (torchvision comes with conda PyTorch) ---
+pillow>=10.0.0,<11.0
+opencv-python-headless>=4.8.0,<5.0
+
+# --- Utilities ---
+tqdm>=4.66.0
+matplotlib>=3.8.0,<4.0
+pandas>=2.0.0,<3.0
+pyarrow>=14.0.0
+requests>=2.31.0
+spacy>=3.7.0,<4.0
+
+# --- Decontamination (pHash; SSCD weights fetched at runtime in dataset.py) ---
+imagehash>=4.3.0
+img2dataset>=1.45.0
+faiss-cpu>=1.8.0
+
+# --- Significance testing ---
+# scipy pinned above
+
+# --- Downloads (HallusionBench / Drive fallbacks) ---
+gdown>=5.0.0
+
+# --- Stage 3 inference: Grounding DINO + RAM++ ---
+groundingdino-py==0.4.0
+fairscale>=0.4.13
+timm>=0.9.0,<1.0
+ram @ git+https://github.com/xinyu1205/recognize-anything.git
+
+# --- Reporting ---
+python-docx>=1.1.0
+
+# --- Jupyter ---
+jupyter>=1.0.0
+ipykernel>=6.29.0
+ipywidgets>=8.0.0
